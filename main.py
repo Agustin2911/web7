@@ -9,8 +9,8 @@ uploaded_file = st.file_uploader("Selecciona un archivo", type=["pdf", "ppt", "p
 opciones = {"español":"es", "english": "en","português":"pt","Deutsch":"de","uارد":"ur","italiano":"it","Français":"fr","日本語":"ja","chinese":"zh-CN","chezch":"cs","korean":"ko"}
 opcion_seleccionada = st.selectbox("Selected de language:", list(opciones.keys()))
 valor=opciones[opcion_seleccionada]
-archivo_terminado=uploaded_file
-descargar_archivo_contenido(archivo_terminado)
+archivo_terminado="file_translated"
+duplicar_archivo_pdf(upload_file,archivo_terminado)
 archivo_medio="archivo_medio.docx"
 archivo_medio2="archivo_medio2.docx"
 if st.button("traslate"):
