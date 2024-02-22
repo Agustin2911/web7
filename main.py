@@ -1,5 +1,6 @@
 import streamlit as st
 from pueba import *
+import os
 
 
 st.set_page_config(page_title="files_translator",page_icon="📁",layout="centered")
@@ -27,7 +28,8 @@ if st.button("traslate"):
                 duplicar_archivo_pdf(temp_file_path,archivo_terminado)
                 pdf_word(temp_file_path,archivo_medio)
                 read_docx2(archivo_medio,archivo_medio2,valor)
-                docx_pdf(archivo_medio2,archivo_terminado)
+                docx_pdf(archivo_medio2,archivo_medio)
+                os.replace(archivo_medio,archivo_terminado)
                 name=archivo_terminado+".pdf"
                 
         st.download_button(
