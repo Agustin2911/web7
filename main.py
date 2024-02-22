@@ -22,6 +22,7 @@ if st.button("traslate"):
                 a=(uploaded_file.name).split(".")
                 name=archivo_terminado+"."+a[len(a)-1];
         elif uploaded_file.type == "application/pdf":
+                archivo_terminado+=".pdf"
                 temp_file_path = os.path.join(os.getcwd(), "temp_file.pdf")
                 with open(temp_file_path, "wb") as temp_file:
                         temp_file.write(uploaded_file.read())
@@ -30,11 +31,10 @@ if st.button("traslate"):
                 read_docx2(archivo_medio,archivo_medio2,valor)
                 docx_pdf(archivo_medio2,archivo_medio)
                 os.replace(archivo_medio,archivo_terminado)
-                name=archivo_terminado+".pdf"
                 
         st.download_button(
                 label="Download the file",
                 data=open(archivo_terminado, 'rb').read(),
-                file_name=name,
+                file_name=archivo_terminado,
                 key='boton_descarga'
         )
