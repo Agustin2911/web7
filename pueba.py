@@ -6,12 +6,10 @@ from pptx import *
 from docx2pdf import convert
 from pdf2docx import Converter
 
-def descargar_archivo_contenido(contenido, nombre_archivo):
-    with open(nombre_archivo, "wb") as f:
-        f.write(contenido)
+def duplicar_archivo_pdf(origen, destino):
+    shutil.copy(origen, destino)
 
-def eliminar_archivo(nombre_archivo):
-    os.remove(nombre_archivo)
+
 
 #translator
 def translate_text(text, target_language='en'):
