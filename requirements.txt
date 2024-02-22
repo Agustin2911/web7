@@ -1,0 +1,6 @@
+streamlit
+googletrans
+python-docx
+python-pptx
+docx2pdf
+pdf2docx
