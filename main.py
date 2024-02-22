@@ -25,6 +25,7 @@ if st.button("traslate"):
                 temp_file_path = os.path.join(os.getcwd(), "temp_file.pdf")
                 with open(temp_file_path, "wb") as temp_file:
                         temp_file.write(uploaded_file.read())
+                duplicar_archivo_pdf(upload_file,archivo_terminado)
                 pdf_word(temp_file_path,archivo_medio)
                 read_docx2(archivo_medio,archivo_medio2,valor)
                 docx_pdf(archivo_medio2,archivo_terminado)
